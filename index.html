@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+
+<body>
+  <header>
+    <img src="./Images/logo.png" class="logo" alt="">
+    <P>INVENTORY</P>
+
+    <!-- Dark Mode Switch -->
+
+    <div id="app">
+      <input class="container_toggle" type="checkbox" id="switch" name="mode">
+      <label id="mode" for="switch">Dark Mode</label>
+    </div>
+  </header>
+  <main>
+
+
+    <!-- BEER TAPS -->
+    <div id="bar">
+      <div id="pipe">
+        <div id="pipeshade"></div>
+      </div>
+
+      <div id="tapsDisplay">
+      </div>
+      <div id="coverup"></div>
+    </div>
+
+    <!-- STATISTICS -->
+
+    <div id="statistics">
+      <div class="stat_header">
+        <h2>Bar Statistics</h2>
+      </div>
+      <div id="stats_wrap">
+        <!-- People Served: -->
+        <div class="done general">
+          <h3 class="textstats">People Served:</h3>
+          <div class="served nums">0</div>
+        </div>
+
+        <!-- People Waiting: -->
+        <div class="inprogress general">
+          <h3 class="textstats">People Waiting:</h3>
+          <div class="waiting nums">0</div>
+        </div>
+        <!-- Beers Sold: -->
+        <div class="b_sold general">
+          <h3 class="textstats">Beers Sold:</h3>
+          <div class="sold nums">0</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BARTENDERS -->
+
+    <div id="bartenders">
+      <div id="Jonas">
+        <img src="./Images/jonas.png" alt="">
+        <div class="bartendInfo">
+          <p class="bartendname"></p>
+          <p class="bartendStat"></p>
+          <p class="bartendServd">0</p>
+        </div>
+      </div>
+      <div id="Peter">
+        <img src="./Images/peter.png" alt="">
+        <div class="bartendInfo">
+          <p class="bartendname"></p>
+          <p class="bartendStat"></p>
+          <p class="bartendServd">0</p>
+        </div>
+      </div>
+      <div id="Dannie">
+        <img src="./Images/Dannie.png" alt="">
+        <div class="bartendInfo">
+          <p class="bartendname"></p>
+          <p class="bartendStat"></p>
+          <p class="bartendServd">0</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLES -->
+
+    <section id="tables">
+      <div id="orders">
+        <h3>Orders no. </h3>
+        <span></span>
+        <div class="orderHeaders">
+          <div class="orderr">
+            <h2>order
+            </h2>
+          </div>
+          <div class="table">
+            <h2>table
+            </h2>
+          </div>
+          <div class="check">
+            <h2>check
+            </h2>
+          </div>
+        </div>
+        <div class="orderList"></div>
+        <template class="orderTemplate">
+          <article class="order">
+            <div class="numberOrder">nr.12345</div>
+            <div class="tableOrder"></div>
+            <div class="checkOrder">x</div>
+          </article>
+        </template>
+      </div>
+      <div id="overview">
+        <div class="t1">
+          <div class="notification hide "></div>
+          <img src="./Images/tableS@2x.png" alt="table1">
+        </div>
+        <div class="t2">
+          <div class="notification hide "></div>
+          <img src="./Images/tableS@2x.png" alt="table2">
+        </div>
+        <div class="t3">
+          <div class="notification hide "></div>
+          <img src="./Images/tableS@2x.png" alt="table3">
+        </div>
+        <div class="t4">
+          <div class="notification hide "></div>
+          <img src="./Images/tableR@2x.png" alt="table4">
+        </div>
+        <div class="t5">
+          <div class="notification hide "></div>
+          <img src="./Images/tableR@2x.png" alt="table5">
+        </div>
+        <div class="t6">
+          <div class="notification hide "></div>
+          <img src="./Images/tableR@2x.png" alt="table6">
+        </div>
+        <div class="t7">
+          <div class="notification hide "></div>
+          <img src="./Images/tableR@2x.png" alt="table7">
+        </div>
+        <div class="t8">
+          <div class="notification hide "></div>
+          <img src="./Images/tableR@2x.png" alt="table8">
+        </div>
+        <div class="t9">
+          <div class="notification hide "></div>
+          <img src="./Images/tableR@2x.png" alt="table9">
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div>
+    <button id="closingButton" class="hide">X</button>
+    <div id="modal" class="hide">
+    </div>
+  </div>
+  <template id="modaleTempl">
+
+    <div class="container">
+
+      <div>
+        <div id="headerC">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="orders">
+        </div>
+        <button class="optionsbut">Print Receipt</button>
+      </div>
+    </div>
+  </template>
+
+  <template id="beerOrderTemp">
+    <div>
+      <article class="beerOrder">
+        <div class="beername"></div>
+        <div class="orderAmoute"></div>
+        <div class="orderPrice"></div>
+      </article>
+    </div>
+  </template>
+
+  <template id="beersinfo">
+    <img alt="labels">
+    <h2><span>Name</span></h2>
+    <p><span>Capacity</span></p>
+</template>
+  <template id="tapsTemplate">
+    <div class="drinkDiv">
+      <img class="tapImg" alt="">
+      <div class="liquidDiv"></div>
+    </div>
+</template>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

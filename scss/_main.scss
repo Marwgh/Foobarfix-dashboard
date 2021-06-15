@@ -1,0 +1,709 @@
+@use "./variables";
+
+html {
+  background: var(--Bg);
+  --Bg: #fffaf1;
+  --Color: #0b2626;
+  --Border: #563116;
+  --Modal: #0b2626da;
+  --Container: #fffaf1;
+  --order: white;
+  --headers: #A1763A;
+}
+
+html[data-theme="dark"] {
+  background: var(--Bg);
+  --Bg: #0b2626;
+  --Color: #e3b449;
+  --Border: #fffaf1;
+  --Modal: #A1763A;
+  --Container: #fffaf1;
+  --orders: #fffaf1;
+  --headers: #0b2626;
+}
+
+body {
+  color: var(--Color);
+  margin: 0px;
+  // font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  overflow-x: hidden;
+}
+
+main {
+  height: auto;
+  width: 100%;
+}
+
+
+/*Header*/
+
+
+#app {
+  width: 15vw;
+  display: flex;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: var(--Bg);
+  margin-top: -1vw;
+  padding: 0.5vw;
+  height: 4vw;
+}
+
+.logo {
+  z-index: 100;
+  width: 9vw;
+  height: 2.5vw;
+  margin-left: 2vw;
+  margin-top: 1vw;
+}
+
+
+// #logolight {
+//   position: absolute;
+//   width: 19vw;
+//   height: 15vw;
+//   z-index: 10;
+// }
+
+
+#switch {
+  cursor: pointer;
+  width: 4vw;
+  height: 1.7vw;
+  background: var(--Color);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  position: relative;
+  appearance: none;
+  margin-right: 0.5vw;
+}
+
+#switch:after {
+  content: "";
+  background: var(--Bg);
+  width: 1.5vw;
+  height: 1.5vw;
+  border-radius: 50%;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+  transform: translateX(-1vw);
+}
+
+#switch:checked:after {
+  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+  transform: translateX(1vw);
+}
+label {
+  font-size: 1.6vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  z-index: 10;
+}
+
+// TEXT
+
+h1 {
+  font-size: 2vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1vw;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+
+p {
+  font-size: 1.6vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+/*Pipe*/
+
+#pipe {
+  position: absolute;
+  width: 100%;
+  height: 2.5vw;
+  background-color: rgb(156, 156, 156);
+  margin-top: 5.4vw;
+  z-index: -2;
+}
+
+#pipeshade {
+  position: absolute;
+  width: 100%;
+  height: 1.6vw;
+  background-color: #6e6e6e;
+  margin-top: 0.9vw;
+  z-index: -2;
+}
+
+/*Bar*/
+
+#bar {
+  position: absolute;
+  align-items: baseline;
+  width: 100vw;
+  margin-top: -0.5vw;
+  pointer-events: none;
+  overflow-x: hidden;
+  height: 19vw;
+  z-index: -10;
+}
+
+#coverup {
+  position: relative;
+  z-index: -10;
+  width: 100%;
+  height: 15vw;
+  top: -24vw;
+  background-color: #fffaf1;
+}
+
+#tapsDisplay {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+/* DRINK EMPTYING */
+.liquidDiv {
+  animation: liquid var(--animation-time) linear infinite;
+  height: 12vw;
+  position: relative;
+  top: -1.82vw;
+  background-color: #ebb328;
+  z-index: -5;
+  transform-origin: top;
+  transform: rotate(180deg);
+}
+
+.drinkDiv {
+  width: 10vw;
+  overflow-x: hidden;
+}
+
+.drinkDiv > img {
+  height: 20.5vw;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes liquid {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+/*Table Overview*/
+
+#tables {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 50vw;
+  height: 26vw;
+  margin-top: 20vw;
+  margin-left: 45vw;
+  border: 0.2vw solid var(--Border);
+  border-radius: 0.5vw;
+  z-index: 2;
+}
+
+#orders {
+  width: 20vw;
+  height: 26vw;
+  background-color: var(--order);
+  margin: 0;
+  border-radius: 0.3vw;
+  z-index: 1;
+}
+
+#orders span {
+  display: block;
+  height: 0.15vw;
+  width: 14vw;
+  background-color: var(--Color);
+  margin-left: 1vw;
+}
+
+.orderHeaders {
+  display: grid;
+  margin-left: 1vw;
+  grid-template-columns: 2fr 1fr 1fr;
+  margin-left: -2vw;
+  color: #0b2626;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.3vw;
+}
+
+.orderList {
+  overflow-y: scroll;
+  height: 19vw;
+}
+.numberOrder  {
+  margin-left:  0.5vw;
+}
+.checkOrder{
+  text-align: center;
+}
+.orderHeaders > div {
+  font-size: 1.5vw;
+  margin-left: 0.2vw;
+}
+
+.order {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  margin-left: 1vw;
+  margin-bottom: 0.4vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.order > div {
+  font-size: 1.2vw;
+
+}
+
+#overview {
+  width: 40vw;
+  margin-left: 2vw;
+  align-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.t1 img {
+  position: relative;
+  height: 7vw;
+  width: 7vw;
+  left: 1vw;
+  cursor: pointer;
+}
+.t2 img {
+  position: relative;
+  height: 7vw;
+  width: 7vw;
+  left: 1vw;
+  cursor: pointer;
+}
+
+.t3 img {
+  position: relative;
+  height: 7vw;
+  width: 7vw;
+  left: 1vw;
+  cursor: pointer;
+}
+
+.t4 img {
+  position: relative;
+  height: 9vw;
+  width: 9vw;
+  cursor: pointer;
+}
+
+.t5 img {
+  position: relative;
+  height: 9vw;
+  width: 9vw;
+  cursor: pointer;
+}
+.t6 img {
+  position: relative;
+  height: 9vw;
+  width: 9vw;
+  cursor: pointer;
+}
+
+.t7 img {
+  position: relative;
+  height: 9vw;
+  width: 9vw;
+  cursor: pointer;
+}
+
+.t8 img {
+  position: relative;
+  height: 9vw;
+  width: 9vw;
+  cursor: pointer;
+}
+.t9 img {
+  position: relative;
+  height: 9vw;
+  width: 9vw;
+  cursor: pointer;
+}
+.notification{
+  height: 2vw;
+  width: 2vw;
+  background-color: red;
+  position: absolute;
+  border-radius: 100%;
+  transform: translateX(1vw);
+  z-index: 2;
+}
+
+.hide + img {
+  pointer-events: none;
+}
+
+/*Bartenders*/
+
+#bartenders {
+  position: absolute;
+  height: 26vw;
+  width: 15vw;
+  margin-top: 20vw;
+  margin-left: 21vw;
+  display: grid;
+  gap: 2.1vw;
+}
+#bartenders > div {
+  display: flex;
+  justify-content: space-around;
+}
+#bartenders div p {
+  font-size: 1vw;
+  margin: 0;
+}
+.bartendInfo {
+  display: grid;
+  padding: 1vw;
+  width: 12vw;
+}
+
+#Jonas {
+  height: 7vw;
+  width: 22vw;
+  border: 0.2vw solid var(--Border);
+  border-radius: 0.5vw;
+}
+
+#Jonas img {
+  width: auto;
+  height: 100%;
+}
+
+#Peter {
+  height: 7vw;
+  width: 22vw;
+  border: 0.2vw solid var(--Border);
+  border-radius: 0.5vw;
+  top: 2vw;
+}
+
+#Peter img {
+  width: auto;
+  height: 100%;
+}
+
+#Dannie {
+  height: 7vw;
+  width: 22vw;
+  border: 0.2vw solid var(--Border);
+  border-radius: 0.5vw;
+  top: 3.5vw;
+}
+
+#Dannie img {
+  width: auto;
+  height: 100%;
+}
+
+
+/*Statistics*/
+
+#statistics {
+  position: absolute;
+  border: 0.2vw solid var(--Border);
+  border-radius: 0.5vw;
+  height: 26vw;
+  width: 15vw;
+  margin-top: 20vw;
+  margin-left: 4vw;
+}
+
+.stat_header {
+  background-color: beige;
+  height: 2vw;
+  margin-top: -0.9vw;
+  border-radius: 0.2vw;
+  align-items: baseline;
+}
+
+#stats_wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.general {
+  height: 7vw;
+}
+
+.textstats {
+  width: 10vw;
+  margin-left: 2.5vw;
+}
+
+.nums {
+  font-size: 3vw;
+  width: 100%;
+  text-align: center;
+}
+
+// Screen sizes
+@media only screen and (max-width: 1100px) and (min-width: 750px) {
+  #statistics {
+    width: 90vw;
+    height: 25vw;
+    margin-top: 2vw;
+    border: 0.5vw solid var(--Border);
+  }
+  .stat_header {
+    height: 4.5vw;
+  }
+  h2 {
+    font-size: 3.5vw;
+  }
+  #stats_wrap {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .textstats {
+    width: 25vw;
+    margin-left: 0vw;
+  }
+  h3 {
+    margin-top: 0.5vw;
+    font-size: 3vw;
+  }
+  .nums {
+    font-size: 6vw;
+  }
+  header > p {
+    position: absolute;
+    top: 33.5vw;
+    left: 44%;
+    font-size: 2.5vw;
+    font-weight: bold;
+  }
+  #pipe {
+    height: 5.5vw;
+    top: 7vw;
+    width: 140vw;
+  }
+  #pipeshade {
+    height: 3.5vw;
+  }
+  #bar {
+    margin-top: 31vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    pointer-events: inherit;
+    width: 90vw;
+    border: 0.5vw solid var(--Border);
+    border-radius: 0.5vw;
+    margin-left: 4vw;
+    height: 45vw;
+  }
+  .drinkDiv {
+    width: 20vw;
+  }
+  .liquidDiv {
+    top: -3.8vw;
+    height: 25vw;
+  }
+  .drinkDiv > img {
+    height: 45vw;
+  }
+  #tables {
+    margin-top: 79vw;
+    margin-left: 4vw;
+    width: 90vw;
+    height: 35vw;
+    border: 0.5vw solid var(--Border);
+  }
+  .orderList {
+    height: 17vw;
+  }
+  .order > div{
+    font-size: 1.8vw;
+  }
+  #orders {
+    width: 30vw;
+    height: 35vw;
+  }
+  #orders span {
+    width: 25vw;
+  }
+  .orderHeaders > div {
+    font-size: 2.5vw;
+  }
+  #bartenders {
+    width: 90vw;
+    margin-left: 4vw;
+    margin-top: 117vw;
+  }
+  #Jonas {
+    width: 90vw;
+    height: 35vw;
+    border: 0.5vw solid var(--Border);
+  }
+  #Peter {
+    width: 90vw;
+    height: 35vw;
+    border: 0.5vw solid var(--Border);
+  }
+  #Dannie {
+    width: 90vw;
+    height: 35vw;
+    border: 0.5vw solid var(--Border);
+  }
+  .bartendInfo {
+    width: 40vw;
+  }
+  #bartenders div p {
+    font-size: 4vw;
+    margin: 2vw;
+  }
+  #overview {
+    width: 50vw;
+    margin-left: 10vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+  }
+}
+
+@media only screen and (max-width: 749px) {
+  #statistics {
+    width: 90vw;
+    height: 25vw;
+    margin-top: 2vw;
+    border: 0.5vw solid var(--Border);
+  }
+  .stat_header {
+    height: 4.5vw;
+  }
+  h2 {
+    font-size: 3.5vw;
+  }
+  #stats_wrap {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .textstats {
+    width: 25vw;
+    margin-left: 0vw;
+  }
+  h3 {
+    margin-top: 0.5vw;
+    font-size: 3vw;
+  }
+  .nums {
+    font-size: 6vw;
+  }
+  header > p {
+    position: absolute;
+    top: 33.5vw;
+    left: 44%;
+    font-size: 2.5vw;
+    font-weight: bold;
+  }
+  #pipe {
+    height: 5.5vw;
+    width: 140vw;
+    top: 7vw;
+  }
+  #pipeshade {
+    height: 3.5vw;
+  }
+  #bar {
+    margin-top: 31vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    pointer-events: inherit;
+    width: 90vw;
+    border: 0.5vw solid var(--Border);
+    border-radius: 0.5vw;
+    margin-left: 4vw;
+    height: 45vw;
+  }
+  .liquidDiv {
+    top: -3.9vw;
+    height: 25vw;
+  }
+  .drinkDiv > img {
+    height: 45vw;
+  }
+  .drinkDiv {
+    width: 20vw;
+  }
+  #tables {
+    margin-top: 79vw;
+    margin-left: 4vw;
+    width: 90vw;
+    height: 35vw;
+    border: 0.5vw solid var(--Border);
+  }
+  #orders {
+    width: 30vw;
+    height: 35vw;
+  }
+  #orders span {
+    width: 25vw;
+  }
+  .orderHeaders > div {
+    font-size: 2.5vw;
+  }
+  #bartenders {
+    width: 90vw;
+    margin-left: 4vw;
+    margin-top: 117vw;
+  }
+  #Jonas {
+    width: 90vw;
+    height: 35vw;
+    border: 0.5vw solid var(--Border);
+  }
+  #Peter {
+    width: 90vw;
+    height: 35vw;
+    border: 0.5vw solid var(--Border);
+  }
+  #Dannie {
+    width: 90vw;
+    height: 35vw;
+    border: 0.5vw solid var(--Border);
+  }
+  .bartendInfo {
+    width: 40vw;
+  }
+  #bartenders div p {
+    font-size: 4vw;
+    margin: 2vw;
+  }
+  #overview {
+    width: 50vw;
+    margin-left: 10vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "foobar-form",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --base=./",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.32.13",
+    "vite": "^2.3.3"
+  }
+}
