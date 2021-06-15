@@ -97,7 +97,6 @@ function prepIfos(data) {
     queue.forEach( element =>{
         if (queueItemes.findIndex((item) => item.id === element.id) === -1){
             beerTot += element.order.length ;
-            console.log("elements are not here");
         }
     });
     queueItemes = queue ;
@@ -109,10 +108,11 @@ function prepIfos(data) {
 
 function showTabels(orders) {
     console.log(orders);
+    document.querySelectorAll(".notification").forEach(x => x.classList.add("hide"));
+    document.querySelectorAll(".notification + img").forEach(x => x.classList.remove("orderwating"));
     orders.forEach(element => {
         document.querySelector( ".t"+ element.table_id.substring(5)+ " .notification").classList.remove("hide");
         document.querySelector( ".t"+ element.table_id.substring(5)+ " .notification + img").classList.add("orderwating");
-        
     });
     document.querySelectorAll(".orderwating").forEach(x => x.addEventListener("click", modaleShow));
     
@@ -153,13 +153,14 @@ function showTabels(orders) {
         
     }
     
-    document.querySelectorAll(".optionsbut").forEach(x => x.addEventListener("click", delet))
+    document.querySelectorAll(".optionsbut").forEach(x => x.addEventListener("click", delet));
 
     document.querySelector("#closingButton").addEventListener("click" , () => {
         document.querySelector("#modal").classList.add("hide"); 
         document.querySelector("#closingButton").classList.add("hide"); 
     })
 }
+    waitTable();
 }
 
 function delet () {
@@ -179,11 +180,12 @@ function delet () {
     .then((data)=> console.log(data));
 }
 
-
+function waitTable()  {
+    setTimeout(getOrder,10000);
+}
 
 function wait() {
     setTimeout(loadData,5000);
-    setTimeout(getOrder,10000);
 
 }
 // Random Time
