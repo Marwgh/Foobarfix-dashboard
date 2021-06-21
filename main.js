@@ -3,6 +3,9 @@ var checkbox = document.querySelector('input[name=mode]');
 let beerTot =  0;
 let queueItemes = [];
 
+gsap.registerPlugin(ScrollTrigger);
+        gsap.to(".beercover", {duration: 5, height:"0", ease:"ease-out", repeat: -1, scrollTrigger:{trigger:".beercover"}})
+
 checkbox.addEventListener('change', function() {
     if(this.checked) {
         document.documentElement.setAttribute('data-theme', 'dark')
@@ -46,6 +49,14 @@ function getOrder() {
             data.forEach(showOrder);
             showTabels(data);
         });
+}
+
+function loadAnimation() {
+    let loadAnimation = true;
+    if (loadAnimation) {
+        document.querySelector(".loadscreen").classList.add("hide");
+        loadAnimation = false;
+    }
 }
 
 function showOrder(order) {
@@ -161,6 +172,7 @@ function showTabels(orders) {
     })
 }
     waitTable();
+    setTimeout(loadAnimation, 5000);
 }
 
 function delet () {

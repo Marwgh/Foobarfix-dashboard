@@ -8,7 +8,7 @@ html {
   --Modal: #0b2626da;
   --Container: #fffaf1;
   --order: white;
-  --headers: #A1763A;
+  --headers: #a1763a;
 }
 
 html[data-theme="dark"] {
@@ -16,7 +16,7 @@ html[data-theme="dark"] {
   --Bg: #0b2626;
   --Color: #e3b449;
   --Border: #fffaf1;
-  --Modal: #A1763A;
+  --Modal: #a1763a;
   --Container: #fffaf1;
   --orders: #fffaf1;
   --headers: #0b2626;
@@ -34,9 +34,57 @@ main {
   width: 100%;
 }
 
+// LOAD SCREEN
+.loadscreen {
+  // display: none;
+  position: absolute;
+  background-color: #0b2626;
+  width: 100vw;
+  height: 102vh;
+  z-index: 200;
+}
+
+.loadscreen > div {
+  position: absolute;
+}
+
+.beermug {
+  width: 17.5vw;
+  position: absolute;
+  z-index: 100;
+  left: 41.7vw;
+  top: 10.5vw;
+}
+
+.beerdrink {
+  position: absolute;
+  z-index: 500;
+  width: 12.5vw;
+  height: 17.5vw;
+}
+
+.beerfoam {
+  position: absolute;
+  z-index: 800;
+  width: 12.5vw;
+  height: 2.5vw;
+}
+
+.beercover {
+  width: 12.5vw;
+  height: 19vw;
+}
+
+.loadheader {
+  position: absolute;
+  top: 30vw;
+  z-index: 1010;
+  left: 41.5vw;
+  font-size: 3vw;
+  color: #e3b449;
+}
 
 /*Header*/
-
 
 #app {
   width: 15vw;
@@ -62,14 +110,12 @@ header {
   margin-top: 1vw;
 }
 
-
 // #logolight {
 //   position: absolute;
 //   width: 19vw;
 //   height: 15vw;
 //   z-index: 10;
 // }
-
 
 #switch {
   cursor: pointer;
@@ -125,7 +171,6 @@ h3 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
 
 p {
   font-size: 1.6vw;
@@ -257,10 +302,10 @@ p {
   overflow-y: scroll;
   height: 19vw;
 }
-.numberOrder  {
-  margin-left:  0.5vw;
+.numberOrder {
+  margin-left: 0.5vw;
 }
-.checkOrder{
+.checkOrder {
   text-align: center;
 }
 .orderHeaders > div {
@@ -278,7 +323,6 @@ p {
 
 .order > div {
   font-size: 1.2vw;
-
 }
 
 #overview {
@@ -287,6 +331,87 @@ p {
   align-content: space-between;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.tableNum1 {
+  color: white;
+  position: absolute;
+  left: 22.2vw;
+  top: 2.8vw;
+  z-index: 20;
+  font-size: 1.5vw;
+}
+
+.tableNum2 {
+  color: white;
+  position: absolute;
+  left: 32.8vw;
+  top: 2.8vw;
+  z-index: 20;
+  font-size: 1.5vw;
+}
+
+.tableNum3 {
+  color: white;
+  position: absolute;
+  left: 43.6vw;
+  top: 2.8vw;
+  z-index: 20;
+  font-size: 1.5vw;
+}
+
+.tableNum4 {
+  color: white;
+  position: absolute;
+  left: 22.2vw;
+  top: 11vw;
+  z-index: 20;
+  font-size: 1.5vw;
+}
+
+.tableNum5 {
+  color: white;
+  position: absolute;
+  left: 32.8vw;
+  top: 11vw;
+  z-index: 20;
+  font-size: 1.5vw;
+}
+
+.tableNum6 {
+  color: white;
+  position: absolute;
+  left: 43.6vw;
+  top: 11vw;
+  z-index: 20;
+  font-size: 1.5vw;
+}
+
+.tableNum7 {
+  color: white;
+  position: absolute;
+  left: 22.2vw;
+  top: 20.5vw;
+  z-index: 20;
+  font-size: 1.5vw;
+}
+
+.tableNum8 {
+  color: white;
+  position: absolute;
+  left: 32.8vw;
+  top: 20.5vw;
+  z-index: 20;
+  font-size: 1.5vw;
+}
+
+.tableNum9 {
+  color: white;
+  position: absolute;
+  left: 43.6vw;
+  top: 20.5vw;
+  z-index: 20;
+  font-size: 1.5vw;
 }
 
 .t1 img {
@@ -351,7 +476,7 @@ p {
   width: 9vw;
   cursor: pointer;
 }
-.notification{
+.notification {
   height: 2vw;
   width: 2vw;
   background-color: red;
@@ -427,7 +552,6 @@ p {
   width: auto;
   height: 100%;
 }
-
 
 /*Statistics*/
 
@@ -544,7 +668,7 @@ p {
   .orderList {
     height: 17vw;
   }
-  .order > div{
+  .order > div {
     font-size: 1.8vw;
   }
   #orders {
@@ -589,6 +713,68 @@ p {
     margin-left: 10vw;
     margin-top: 2vw;
     margin-bottom: 2vw;
+  }
+  .tableNum1 {
+    left: 44vw;
+    top: 4.3vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum2 {
+    left: 60.8vw;
+    top: 4.3vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum3 {
+    left: 77.5vw;
+    top: 4.3vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum4 {
+    left: 44vw;
+    top: 15.2vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum5 {
+    left: 60.9vw;
+    top: 15.2vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum6 {
+    left: 77.5vw;
+    top: 15.2vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum7 {
+    left: 44vw;
+    top: 27vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum8 {
+    left: 60.9vw;
+    top: 27vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum9 {
+    left: 77.5vw;
+    top: 27vw;
+    z-index: 20;
+    font-size: 2vw;
   }
 }
 
@@ -705,5 +891,67 @@ p {
     margin-left: 10vw;
     margin-top: 2vw;
     margin-bottom: 2vw;
+  }
+  .tableNum1 {
+    left: 44vw;
+    top: 4.3vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum2 {
+    left: 60.8vw;
+    top: 4.3vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum3 {
+    left: 77.5vw;
+    top: 4.3vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum4 {
+    left: 44vw;
+    top: 15.2vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum5 {
+    left: 60.9vw;
+    top: 15.2vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum6 {
+    left: 77.5vw;
+    top: 15.2vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum7 {
+    left: 44vw;
+    top: 27vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum8 {
+    left: 60.9vw;
+    top: 27vw;
+    z-index: 20;
+    font-size: 2vw;
+  }
+
+  .tableNum9 {
+    left: 77.5vw;
+    top: 27vw;
+    z-index: 20;
+    font-size: 2vw;
   }
 }

@@ -10,6 +10,20 @@
 
 
 <body>
+  <div class="loadscreen">
+    <div>
+        <svg width="1000" height="500">
+          <rect class="beerdrink" x="41.7vw" y="12vw" rx="1vw" fill="#e3b449"/>
+          <rect class="beerfoam" x="41.7vw" y="10.5vw" fill="white"/>
+          <rect class="beercover" x="41.7vw" y="10vw" fill="#0b2626"/>
+        </svg>
+        <div>
+          <img class="beermug" src="./Images/BeerGlass.png" alt="loadimg"/>
+          <h3 class="loadheader">FOOBAR</h3>
+      </div>
+    </div>
+    
+  </div>  
   <header>
     <img src="./Images/logo.png" class="logo" alt="">
     <P>INVENTORY</P>
@@ -124,38 +138,47 @@
         <div class="t1">
           <div class="notification hide "></div>
           <img src="./Images/tableS@2x.png" alt="table1">
+          <div class="tableNum1">1</div>
         </div>
         <div class="t2">
           <div class="notification hide "></div>
           <img src="./Images/tableS@2x.png" alt="table2">
+          <div class="tableNum2">2</div>
         </div>
         <div class="t3">
           <div class="notification hide "></div>
           <img src="./Images/tableS@2x.png" alt="table3">
+          <div class="tableNum3">3</div>
         </div>
         <div class="t4">
           <div class="notification hide "></div>
           <img src="./Images/tableR@2x.png" alt="table4">
+          <div class="tableNum4">4</div>
         </div>
         <div class="t5">
           <div class="notification hide "></div>
           <img src="./Images/tableR@2x.png" alt="table5">
+          <div class="tableNum5">5</div>
         </div>
         <div class="t6">
           <div class="notification hide "></div>
           <img src="./Images/tableR@2x.png" alt="table6">
+          <div class="tableNum6">6</div>
         </div>
         <div class="t7">
           <div class="notification hide "></div>
           <img src="./Images/tableR@2x.png" alt="table7">
+          <div class="tableNum7">7</div>
         </div>
         <div class="t8">
           <div class="notification hide "></div>
           <img src="./Images/tableR@2x.png" alt="table8">
+          <div class="tableNum8">8</div>
         </div>
         <div class="t9">
           <div class="notification hide "></div>
           <img src="./Images/tableR@2x.png" alt="table9">
+          <div class="tableNum9">9</div>
         </div>
 
       </div>
@@ -205,7 +228,8 @@
       <div class="liquidDiv"></div>
     </div>
 </template>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
   <script type="module" src="/main.js"></script>
 </body>
 
